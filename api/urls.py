@@ -1,6 +1,7 @@
-from django.urls import path
+from django.urls import path, include
 from .views import BookAPIView
 
 urlpatterns = [
-    path('', BookAPIView.as_view()),
+    path('books/', BookAPIView.as_view()),
+    path('todos/', include('todos.urls')),
 ]
